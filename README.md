@@ -65,3 +65,7 @@ Welcome to the E-Commerce Application project! 🚀 This project involves buildi
     * Compare the hashed input with the stored hashed password in the database. 
     * If they match, authentication is successful.
 
+### Milestone 8: Product Card & Homepage Layout
+
+* Created a reusable Card Component with props for product details.
+* Designed the Homepage layout using a grid or flexbox to display multiple product cards.

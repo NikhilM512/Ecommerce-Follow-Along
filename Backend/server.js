@@ -83,10 +83,7 @@ app.post("/login",async(req,res)=>{
     } catch (error) {
         res.json({"Message":"Somthing went wrong!",error})
     }
-
 })
-
-
 
 
 app.listen(process.env.PORT,async()=>{
