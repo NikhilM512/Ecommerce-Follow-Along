@@ -1,9 +1,24 @@
 import React from 'react';
 import "./Home.css";
-import productData from "./data.json"
+// import productData from "./data.json"
 import Cart from './Cart';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Home = () => {
+
+  let [productData,setProductData]=useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:7777/product").then((res)=>{
+      return res.json();
+    }).then((res)=>{
+      console.log(res);
+      setProductData(res.data)
+    }).catch((err)=>{
+      console.log(err);
+    })
+  },[]);
 
   return (
     <>

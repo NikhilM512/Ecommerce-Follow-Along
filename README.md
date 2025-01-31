@@ -69,3 +69,41 @@ Welcome to the E-Commerce Application project! 🚀 This project involves buildi
 
 * Created a reusable Card Component with props for product details.
 * Designed the Homepage layout using a grid or flexbox to display multiple product cards.
+
+## Milestone 9: Product Input Form
+
+*   **Product Details Form:** Developed a comprehensive form to collect all necessary product information.
+*   **Multiple Image Upload:** Implemented functionality for uploading multiple images for each product.
+
+
+# Milestone 10: Product Schema & Endpoint
+
+Create a Mongoose product schema with validation and a POST endpoint to store product details in MongoDB.
+
+**Goals:**
+
+* Product schema creation
+* Endpoint for product data (POST)
+* Data validation
+
+
+## Milestone 11: Data Fetching and Display
+
+This milestone focuses on fetching product data from the backend and dynamically displaying it on the frontend using product cards.
+
+**Key Objectives:**
+
+* Implement a backend endpoint to retrieve all product data from MongoDB and send it to the frontend.
+* Create a frontend function to fetch the product data from the endpoint.
+* Dynamically render the retrieved product data using the existing product card component.
+
+## Milestone 12: My Products Page
+
+This milestone focuses on creating a "My Products" page that displays only the products added by the logged-in user (identified by their email).
+
+**Key Objectives:**
+
+* Implement a backend endpoint that retrieves products from MongoDB, filtering by the user's email address.
+* Create a frontend function to fetch the filtered product data from the endpoint.
+* Dynamically render the retrieved product data on the "My Products" page using the existing product card component.
+

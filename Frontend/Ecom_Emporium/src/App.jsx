@@ -3,6 +3,7 @@ import './App.css'
 import Home from './components/Home'
 import LoginPage from './components/Login'
 import Login from './components/Login'
+import ProductForm from './components/ProductForm'
 import SignUp from './components/SignUp'
 
 function App() {
@@ -10,10 +11,10 @@ function App() {
 
   return (
     <>
-       <Home></Home>
+       {/* <Home></Home> */}
        {/* <SignUp></SignUp> */}
-       {/* <LoginPage></LoginPage> */}
-        
+       <LoginPage></LoginPage>
+       {/* <ProductForm></ProductForm> */}
     </>
   )
 }

@@ -5,18 +5,24 @@ const { userModel } = require('./model/user.model');
 const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
 const cors=require("cors");
+const {authentication}=require('./middleware/authentication')
+const { productRouter } = require('./Routes/product.route');
+console.log(authentication,"J")
 require('dotenv').config();
 
 const app=express();
 
-
 app.use(express.json());
 app.use(cors())
 
+// app.use(authentication)
+
 let connection = mongoose.connect(process.env.mongoURL);
 
-app.get("/ping",(req,res)=>{
-    res.send("Pong")
+
+
+app.get("/",(req,res)=>{
+    res.send("Hello")
 });
 
 const storage=multer.diskStorage({
@@ -71,8 +77,8 @@ app.post("/login",async(req,res)=>{
             let hashed_password=user[0].password;
             bcrypt.compare(password,hashed_password,function(err,result){
                 if(result){
-                    const token = jwt.sign({"userID":user[0]._id},process.env.SECRET_KEY);
-                    res.send({"msg":"Login successfull","token" : token})
+                    const token = jwt.sign({"email":user[0]._id},process.env.SECRET_KEY);
+                    res.send({"msg":"Login successfull","token" : token,email})
                 }else{
                     res.send("Login failed! Enter the correct password")
                 }
@@ -85,6 +91,7 @@ app.post("/login",async(req,res)=>{
     }
 })
 
+app.use("/product", productRouter);
 
 app.listen(process.env.PORT,async()=>{
     try {
@@ -93,5 +100,5 @@ app.listen(process.env.PORT,async()=>{
     } catch (error) {
         console.log(error);
     }
-    console.log(`Server is running on port ${process.env.PORT}`)
+    console.log(`Server is running on port http://localhost:${process.env.PORT}`)
 })
