@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <>
-      <nav>
+      {/* <nav>
         <div>
             <h1>Kalvium E-cart</h1>
         </div>
@@ -30,7 +30,7 @@ const Home = () => {
         <button className='login-btn'>Login</button>
         <button className='signup-btn'>Sign-Up</button>
         </div>
-      </nav>
+      </nav> */}
 
       <div className="container">
         {

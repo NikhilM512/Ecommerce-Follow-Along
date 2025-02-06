@@ -7,7 +7,7 @@ const jwt=require("jsonwebtoken");
 const cors=require("cors");
 const {authentication}=require('./middleware/authentication')
 const { productRouter } = require('./Routes/product.route');
-console.log(authentication,"J")
+// console.log(authentication,"J")
 require('dotenv').config();
 
 const app=express();
