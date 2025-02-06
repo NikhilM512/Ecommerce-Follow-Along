@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Home.css";
 // import productData from "./data.json"
-import Cart from './Cart';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import ProductCard from './ProductCard';
 
 const Home = () => {
 
@@ -35,9 +35,9 @@ const Home = () => {
       <div className="container">
         {
           productData?.map((product)=>{
-            return <Cart product={product}>
+            return <ProductCard product={product}>
               
-            </Cart>
+            </ProductCard>
           })
         }
       </div>

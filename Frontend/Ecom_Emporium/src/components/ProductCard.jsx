@@ -1,8 +1,8 @@
 import React from 'react'
-import "./Cart.css"
+import "./ProductCard.css"
 // import img from "../../../../Backend/"
 
-const Cart = ({product}) => {
+const ProductCard = ({product}) => {
 
   let imgPath=`../../../../Backend${product.productImage[0]}`;
   // const imgPath='productImage-1738054603618-343930158.jpg'
@@ -16,4 +16,4 @@ const Cart = ({product}) => {
   )
 }
 
-export default Cart
+export default ProductCard
