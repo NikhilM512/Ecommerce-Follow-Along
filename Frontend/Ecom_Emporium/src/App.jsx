@@ -12,6 +12,8 @@ import MyProduct from './Pages/MyProduct'
 import Cart from './Pages/Cart'
 import AddProduct from './Pages/AddProduct'
 import SingleProduct from './Pages/SingleProduct'
+import Profile from './Pages/Profile'
+import AddressForm from './Components/AddressForm'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,8 +31,9 @@ function App() {
         <Route path="/sign-in" element={<LoginPage></LoginPage>}></Route>
         <Route path="/admin" element={<ProductForm></ProductForm>}></Route>
         <Route path="/editproduct/:id" element={<EditProducts></EditProducts>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/profile/address-form" element={<AddressForm></AddressForm>}></Route>
       </Routes>
-
     </>
   )
 }

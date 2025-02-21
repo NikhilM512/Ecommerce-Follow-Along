@@ -20,13 +20,15 @@ const ProductCard = ({product,handleDelete}) => {
   
   return (
     <div  className='cart'>
-        <img  alt={product.productName} />
+        <img src={product.productImage} alt={product.productName} />
         <h3>Product Name: {product.productName}</h3>
         <h4>Price : {product.productPrice}</h4>
         <p>{product.productDescription}</p>
+        <div className='buttons' style={{display:"flex"}}>
         <button onClick={handleClick}>Edit</button>
         <button onClick={()=>handleDelete(product._id)}>Delete</button>
-        <button onClick={()=>handleDetails(product._id)}>View Details</button>
+        </div>
+        <button style={{display:"block",margin:"2% auto"}} onClick={()=>handleDetails(product._id)}>View Details</button>
     </div>
   )
 }

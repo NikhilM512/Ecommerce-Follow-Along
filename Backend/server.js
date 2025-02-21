@@ -5,8 +5,10 @@ const { userModel } = require('./model/user.model');
 const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
 const cors=require("cors");
-const {authentication}=require('./middleware/authentication')
+const {authentication, authenticate}=require('./middleware/authentication')
 const { productRouter } = require('./Routes/product.route');
+const { cartRouter } = require('./routes/cart.route');
+const { userRouter } = require('./routes/user.route');
 // console.log(authentication,"J")
 require('dotenv').config();
 
@@ -18,7 +20,6 @@ app.use(cors())
 // app.use(authentication)
 
 let connection = mongoose.connect(process.env.mongoURL);
-
 
 
 app.get("/",(req,res)=>{
@@ -71,27 +72,34 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login",async(req,res)=>{
     const {email,password}=req.body;
+    console.log(email,password)
     try {
         let user= await userModel.find({email});
         if(user.length>0){
             let hashed_password=user[0].password;
             bcrypt.compare(password,hashed_password,function(err,result){
                 if(result){
-                    const token = jwt.sign({"email":user[0]._id},process.env.SECRET_KEY);
-                    res.send({"msg":"Login successfull","token" : token,email})
+                    const token = jwt.sign({"userID":user[0]._id,"email":user[0].email},process.env.SECRET_KEY);
+                    res.send({"msg":"Login successfull","token" : token})
                 }else{
-                    res.send("Login failed! Enter the correct password")
+                    res.send({message:"Login failed! Enter the correct password"})
                 }
             })
         }else{
-            res.send("Login failed! Please register first")
+            res.send({message:"Login failed! Please register first"})
         }
     } catch (error) {
         res.json({"Message":"Somthing went wrong!",error})
     }
 })
 
+
 app.use("/product", productRouter);
+
+app.use(authenticate);
+app.use("/user", userRouter);
+app.use("/cart", cartRouter);
+
 
 app.listen(process.env.PORT,async()=>{
     try {

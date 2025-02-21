@@ -62,7 +62,7 @@ productRouter.post("/create",upload.array('productImage', 12),async(req,res)=>{
     try {
         const {productName, productDescription,productPrice}=req.body;
 
-        const imgPaths=req.files.map((file)=>`/uploads/${file.filename}`);
+        const imgPaths=req.files?.map((file)=>`/uploads/${file.filename}`);
 
         console.log(imgPaths)
 

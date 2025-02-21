@@ -15,7 +15,8 @@ const productSchema=new mongoose.Schema({
       },
       productImage:{
         type:[String],
-        required:true
+        required:true,
+        default:"https://muselot.in/cdn/shop/products/muselot_s-plaint-shirtformenincharcoalgreycolor.jpg?v=1658089773&width=1445"
       }
 });
 

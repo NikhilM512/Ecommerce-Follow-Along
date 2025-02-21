@@ -1,8 +1,22 @@
 .cart{
     border: 2px solid;
+    min-height: fit-content;
 }
 
 .cart>img{
     width: 100%;
     height: auto;
+}
+
+h3,h4,p{
+    margin-left: 2%;
+    font-size: large;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.buttons{
+    /* border: 2px solid red; */
+    justify-content: space-evenly;
+    padding-left: 15%;
 }

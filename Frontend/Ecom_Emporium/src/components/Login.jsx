@@ -13,28 +13,35 @@ function LoginPage() {
       setErrorMessage('Please enter both username and password.');
       return;
     }
-
+       console.log(username,password)
     try {
       // Make a request to your backend API to authenticate the user
-      const response = await fetch('/api/login', { 
+      fetch('http://localhost:7777/login', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
-      });
-      console.log(response)
-      if (response.ok) {
-        // Handle successful login (e.g., redirect to dashboard)
-        console.log('Login successful!');
-        // Redirect to the desired page after successful login
-        window.location.href = '/dashboard'; 
-      } else {
-        const data = await response.json();
-        setErrorMessage(data.message || 'Login failed.');
-      }
+        body: JSON.stringify({ email:username, password }),
+      }).then((res)=>res.json())
+      .then((res)=>{
+        console.log(res)
+        let token=res.token;
+        localStorage.setItem("Token",token)
+      })
+      // let res=await response.json();
+
+      // console.log(res)
+      // if (response.ok) {
+      //   // Handle successful login (e.g., redirect to dashboard)
+      //   console.log('Login successful!');
+      //   // Redirect to the desired page after successful login
+      //   // window.location.href = '/dashboard'; 
+      // } else {
+      //   const data = await response.json();
+      //   setErrorMessage(data.message || 'Login failed.');
+      // }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error('Login error:', error.message);
       setErrorMessage('An error occurred during login.');
     }
   };
