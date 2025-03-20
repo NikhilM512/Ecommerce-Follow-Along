@@ -25,6 +25,23 @@ productRouter.get("/:id",async(req,res)=>{
   }
 });
 
+
+productRouter.put("/update/:id",async(req,res)=>{
+  let id=req.params.id;
+  // console.log(req.body,"k")
+  const {productName, productDescription, productPrice, productImages:productImage}=req.body;
+  let payload={productName, productDescription, productPrice, productImage};
+  console.log(payload)
+  try {
+    const product= await productModel.findByIdAndUpdate(id,payload);
+    res.send({"Message":"Successfully updated the data from database",data:product})
+  } catch (error) {
+    res.send({"Error-message":error})
+  }
+});
+
+
+
 productRouter.delete("/delete/:id",async(req,res)=>{
 
   let id=req.params.id;

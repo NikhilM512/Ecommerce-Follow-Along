@@ -1,0 +1,43 @@
+[
+    {
+      "productName": "Wireless Earbuds",
+      "productDescription": "Bluetooth wireless earbuds with noise cancellation and long battery life.",
+      "productPrice": 49.99,
+      "Quantity": 150,
+      "Address": "123 Market Street, San Francisco, CA 94103",
+      "productImage": "https://muselot.in/cdn/shop/products/muselot_s-plaint-shirtformenincharcoalgreycolor.jpg?v=1658089773&width=1445"
+    },
+    {
+      "productName": "Portable Charger",
+      "productDescription": "10000mAh power bank with fast charging capabilities and compact design.",
+      "productPrice": 29.99,
+      "Quantity": 200,
+      "Address": "456 Elm Avenue, Los Angeles, CA 90001",
+      "productImage": "https://example.com/images/portable_charger.jpg"
+    },
+    {
+      "productName": "Smart Watch",
+      "productDescription": "Waterproof smart watch with heart rate monitor and GPS tracking.",
+      "productPrice": 129.99,
+      "Quantity": 75,
+      "Address": "789 Pine Road, New York, NY 10001",
+      "productImage": "https://example.com/images/smart_watch.jpg"
+    },
+    {
+      "productName": "Laptop Sleeve",
+      "productDescription": "Protective laptop sleeve made of durable neoprene material, fits 15-inch laptops.",
+      "productPrice": 19.99,
+      "Quantity": 300,
+      "Address": "321 Maple Street, Chicago, IL 60601",
+      "productImage": "https://example.com/images/laptop_sleeve.jpg"
+    },
+    {
+      "productName": "Fitness Tracker",
+      "productDescription": "Wearable fitness tracker with step counter, sleep monitor, and activity tracker.",
+      "productPrice": 59.99,
+      "Quantity": 100,
+      "Address": "654 Oak Avenue, Boston, MA 02108",
+      "productImage": "https://example.com/images/fitness_tracker.jpg"
+    }
+  ]
+  

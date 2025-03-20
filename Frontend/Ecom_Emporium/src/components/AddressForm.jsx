@@ -11,14 +11,22 @@ const AddressForm = () => {
     const [addressType,setAddressType]=useState("");
 
     const handleAddress=(e)=>{
+
         e.preventDefault();
 
-        let data={country,city,address1,address2,zipCode,addressType}
-        
-        fetch('',{
-            method:"POST",
+        let data={country,city,address1,address2,zipCode,addressType};
+        console.log(data)
+        fetch('http://localhost:7777/user/add-address',{
+            method:"PATCH",
             body:JSON.stringify(data),
-            headers:""
+            headers:{
+                    "Content-Type":"application/json",
+                    "authorization":`Bearer ${localStorage.getItem("Token")}`}
+        }).then((res)=>res.json())
+        .then((res)=>{
+            console.log(res);
+        }).catch((err)=>{
+            console.log(err);
         })
     }
 
@@ -33,7 +41,7 @@ const AddressForm = () => {
     <label htmlFor="">Address2</label>
     <input type="text" onChange={(e)=>setAddress2(e.target.value)} placeholder='Enter Address2' value={address2}/>
     <label htmlFor="">ZIP Code</label>
-    <input type="text" onChange={(e)=>setZipCode(e.target.value)} placeholder='Enter ZIP Code' value={zipCode}/>
+    <input type="number" onChange={(e)=>setZipCode(e.target.value)} placeholder='Enter ZIP Code' value={zipCode}/>
     <label htmlFor="">Address Type</label>
     <select style={{'width':"80%",margin:"auto",}} onChange={(e)=>setAddressType(e.target.value)} >
         <option value="Home">Home</option>

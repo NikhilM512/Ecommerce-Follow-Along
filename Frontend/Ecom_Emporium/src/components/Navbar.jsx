@@ -11,8 +11,11 @@ const Navbar = () => {
         <Link to="/my-product"><button>My Product</button></Link>
         <Link to="/add-product"><button>Add Product</button></Link>
         <Link to="/cart"><button>Cart</button></Link>
-            {/* <Link to="/registration"><button>Sign-In</button></Link>
-            <Link to="/sign-in"><button>Sign-Up</button></Link> */}
+        <Link to="/profile"><button>Profile</button></Link>
+        <Link to="/my-order"><button>My Order</button></Link>
+        <Link to="/sign-in"><button>Sign-In</button></Link>
+        <Link to="/registration"><button>Sign-Up</button></Link>
+        
         </div>
     </div>
   )

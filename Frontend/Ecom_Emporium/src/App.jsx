@@ -14,6 +14,8 @@ import AddProduct from './Pages/AddProduct'
 import SingleProduct from './Pages/SingleProduct'
 import Profile from './Pages/Profile'
 import AddressForm from './Components/AddressForm'
+import Addresses from './Pages/Addresses'
+import MyOrders from './Pages/MyOrders'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +35,8 @@ function App() {
         <Route path="/editproduct/:id" element={<EditProducts></EditProducts>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/profile/address-form" element={<AddressForm></AddressForm>}></Route>
+        <Route path="/addresses" element={<Addresses></Addresses>}></Route>
+        <Route path="/my-order" element={<MyOrders></MyOrders>}></Route>
       </Routes>
     </>
   )

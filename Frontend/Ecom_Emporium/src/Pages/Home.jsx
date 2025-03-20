@@ -5,16 +5,21 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import ProductCard from '../Components/ProductCard';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import store from '../redux/store';
+
 
 const Home = () => {
 
   let [productData, setProductData] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log(apiUrl,"K")
+  let email=useSelector((store)=>store.user.email)
 
   useEffect(() => {
-    fetch("http://localhost:7777/product").then((res) => {
+    fetch(`http://localhost:7777/product`).then((res) => {
       return res.json();
     }).then((res) => {
-      // console.log(res);
       setProductData(res.data)
     }).catch((err) => {
       console.log(err);
@@ -34,15 +39,7 @@ const Home = () => {
 
   return (
     <>
-      {/* <nav>
-        <div>
-            <h1>Kalvium E-cart</h1>
-        </div>
-        <div className='nav-2'>
-        <button className='login-btn'>Login</button>
-        <button className='signup-btn'>Sign-Up</button>
-        </div>
-      </nav> */}
+      {/* <h1>{email}</h1> */}
 
       <div className="container">
         {

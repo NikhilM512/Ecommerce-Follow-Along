@@ -1,0 +1,33 @@
+.address-box{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    border: 4px solid slateblue;
+    padding:2% 2%;
+    margin: 2% auto;
+    border-radius: 5px;
+    background-color: white;
+
+}
+
+section{
+    margin: 5%;
+    border: 5px solid gray;
+    min-height: 75vh;
+    
+}
+
+
+span{
+    width: 80%;
+    font-size: larger;
+    /* border: 2px solid grey; */
+}
+
+input[type="checkbox"]{
+    /* border: 10px solid red; */
+    width: 25px;
+    height: 20px;
+    /* background-color: red; */
+    margin-left: 10px;
+}

@@ -5,7 +5,8 @@ console.log(process.env.SECRET_KEY)
 
 const authenticate=(req,res,next)=>{
     const token=req.headers?.authorization?.split(" ")[1];
-    if(token){
+    
+    if(token!='null'){
         const decoded=jwt.verify(token,process.env.SECRET_KEY);
          if (decoded){
             const emailID = decoded.email;
@@ -15,10 +16,10 @@ const authenticate=(req,res,next)=>{
             req.body.userID = userID;
             next()
          }else{
-            res.send("Login Please");
+            res.send({"message":"Login Please"});
          }
     }else{
-        res.send("Login Please");
+        res.send({"message":"Login Please"});
     }
 }
 

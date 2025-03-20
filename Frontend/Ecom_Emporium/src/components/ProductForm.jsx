@@ -36,9 +36,19 @@ const ProductForm = () => {
       productDescription,
       productPrice,
       productImage
-    }
+    };
 
-    console.log(data);
+    fetch(`http://localhost:7777/product/create`,{
+        method:"POST",
+        body:JSON.stringify(data),
+        headers:{"Content-Type":"application/json"}
+    },).then((res)=>res.json())
+    .then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    });
+
 
     setProductName("");
     setProductDescription("");

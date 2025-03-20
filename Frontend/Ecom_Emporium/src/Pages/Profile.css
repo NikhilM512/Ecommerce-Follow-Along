@@ -1,0 +1,36 @@
+.profile-container{
+    display: flex;
+    /* margin-top: 10px; */
+}
+
+section{
+    padding: 7% 0;
+    margin: 0 1%;
+    border-radius: 12px;
+    border: 4px dashed grey;
+}
+
+.section-1{
+    width: 40%;
+    /* border:2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-1>img{
+    width: 33%;
+    height: 222px;
+}
+
+.add-address{
+    margin-top: 7%;
+}
+
+.section-2{
+    width: 60%;
+    /* border:2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
